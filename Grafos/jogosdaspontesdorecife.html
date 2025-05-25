@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo das Pontes do Recife</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20px;
+      background-color: #e0f7fa;
+    }
+    h1 {
+      color: #00695c;
+    }
+    p {
+      font-size: 18px;
+      color: #004d40;
+    }
+    canvas {
+      border: 3px solid #00695c;
+      background-color: #ffffff;
+      cursor: crosshair;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #00796b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Jogo das Pontes do Recife</h1>
+<p>Clique nos pontos para atravessar as pontes sem repetir!</p>
+
+<canvas id="mapa" width="600" height="500"></canvas>
+<br>
+<button id="resetar">Resetar</button>
+
+<script>
+  const canvas = document.getElementById('mapa');
+  const ctx = canvas.getContext('2d');
+
+  const imagemFundo = new Image();
+  imagemFundo.src = 'https://turismopebrasil.wordpress.com/wp-content/uploads/2010/07/4410_recife_centro_pontes.gif';
+
+  const pontos = {
+    P7: { x: 160, y: 100, nome: "Ponte da Torre" },
+    P1: { x: 360, y: 150, nome: "Ponte da Boa Vista" },
+    P2: { x: 300, y: 150, nome: "Ponte Duarte Coelho" },
+    P3: { x: 440, y: 150, nome: "Ponte Princesa Isabel" },
+    P4: { x: 300, y: 370, nome: "Ponte Buarque de Macedo" },
+    P5: { x: 400, y: 350, nome: "Ponte Maurício de Nassau" },
+    P6: { x: 460, y: 300, nome: "Ponte de Limoeiro" }
+  };
+
+  const caminho = [];
+
+  function desenhar() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(imagemFundo, 0, 0, canvas.width, canvas.height);
+
+    // Desenhar linhas do caminho
+    ctx.beginPath();
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 4;
+    for (let i = 0; i < caminho.length - 1; i++) {
+      const pt1 = pontos[caminho[i]];
+      const pt2 = pontos[caminho[i + 1]];
+      ctx.moveTo(pt1.x, pt1.y);
+      ctx.lineTo(pt2.x, pt2.y);
+    }
+    ctx.stroke();
+
+    // Desenhar pontos
+    for (let p in pontos) {
+      const pt = pontos[p];
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, 20, 0, 2 * Math.PI);
+      ctx.fillStyle = 'red';
+      ctx.fill();
+      ctx.strokeStyle = '#333';
+      ctx.stroke();
+
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 14px Arial';
+      ctx.fillText(p, pt.x - 5, pt.y + 5);
+    }
+  }
+
+  function pontoClicado(x, y) {
+    for (let p in pontos) {
+      const pt = pontos[p];
+      const dx = pt.x - x;
+      const dy = pt.y - y;
+      if (Math.sqrt(dx * dx + dy * dy) < 20) {
+        return p;
+      }
+    }
+    return null;
+  }
+
+  canvas.addEventListener('click', function(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const p = pontoClicado(x, y);
+    if (p && !caminho.includes(p)) {
+      caminho.push(p);
+      desenhar();
+      if (caminho.length === Object.keys(pontos).length) {
+        setTimeout(() => alert('Parabéns! Você cruzou todas as pontes!'), 100);
+      }
+    }
+  });
+
+  document.getElementById('resetar').addEventListener('click', function() {
+    caminho.length = 0;
+    desenhar();
+  });
+
+  imagemFundo.onload = function() {
+    desenhar();
+  };
+</script>
+
+</body>
+</html>
