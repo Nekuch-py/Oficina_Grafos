@@ -1,32 +1,69 @@
-## Projeto Teórico e Prático Sobre Grafos - Turma E02
-Este repositório é um código desenvolvido para apresentar um trabalho proposto durante o semestre 2025-1 da matéria Algoritimos e Lógica de programação da Universidade Tiradentes-PE.
-A cadeira está sendo ministrada pelo prof° Vinicius Costa Amador.
+# 🧠 Projeto Teórico e Prático Sobre Grafos - Turma E02
 
-## *Integrantes* 
-Nayelle Fonseca, Anne Vitória, Joyce Stefany, Rillary Luize, Kaique Marques, Guilherme de França e Vinicius Jose
-
-
-## *Introdução à Trilha de Grafos: Explorando Conexões e Soluções*
-
-Bem-vindo(a) à nossa trilha de aprendizagem sobre *grafos*, um dos conceitos mais importantes e versáteis da área de tecnologia, matemática e ciências da computação!
-
-Os *grafos* são estruturas que nos permitem representar e resolver problemas relacionados a *conexões*, *relações* e *caminhos*. Estão presentes em diversos aspectos do nosso cotidiano, como:
-
-* *Redes sociais:* quem conhece quem?
-* *Mapas e rotas:* qual o caminho mais curto?
-* *Sistemas de recomendação:* quem você talvez devesse conhecer?
-* *Organização de tarefas:* o que depende de quê?
-
-Ao longo desta trilha, vamos:
-
-✅ Entender o que é um grafo e como representá-lo.
-✅ Resolver problemas aplicados à *tecnologia* e ao *cotidiano*.
-✅ Explorar *algoritmos clássicos* como busca em profundidade (DFS) e busca em largura (BFS).
-✅ Modelar grafos usando a linguagem *Python* de forma simples e didática.
-
-Esta trilha é pensada para quem está começando, mas também quer desenvolver um *pensamento lógico e estratégico*, essencial para quem quer atuar em áreas como programação, análise de dados, engenharia de software, inteligência artificial e muito mais.
+Este repositório foi desenvolvido para apresentar um trabalho proposto na disciplina **Algoritmos e Lógica de Programação** (Universidade Tiradentes - PE, semestre 2025.1), sob orientação do prof. **Vinicius Costa Amador**.
 
 ---
 
-*Pronto(a)?*
-Então, vamos explorar juntos como o mundo está *conectado* — e como podemos *modelar e resolver problemas* com a ajuda dos grafos!
+## 👥 Integrantes
+
+- Nayelle Fonseca  
+- Anne Vitória  
+- Joyce Stefany  
+- Rillary Luize  
+- Kaique Marques  
+- Guilherme de França  
+- Vinicius Jose  
+
+---
+
+## 🧭 Introdução à Trilha de Grafos: Explorando Conexões e Soluções
+
+Seja bem-vindo(a) à nossa trilha de aprendizado sobre **grafos**, um dos conceitos mais versáteis da ciência da computação, aplicável em diversas áreas como redes, logística, sistemas inteligentes, inteligência artificial e muito mais.
+
+---
+
+## 🔍 O que são grafos?
+
+Grafos são **estruturas matemáticas** que permitem representar e resolver problemas envolvendo:
+
+- **Conexões** 🔗
+- **Relações** 🤝
+- **Caminhos** 🧭
+
+Eles aparecem em várias situações do cotidiano:
+
+- 🌐 **Redes sociais**: quem conhece quem?
+- 🗺️ **Mapas e rotas**: qual o caminho mais curto?
+- 🧠 **Sistemas de recomendação**: o que você talvez goste?
+- 📋 **Organização de tarefas**: o que depende do quê?
+
+---
+
+## 🎯 Objetivos da Trilha
+
+Durante essa jornada, nosso foco será:
+
+✅ Compreender **o que é um grafo** e como representá-lo  
+✅ Resolver problemas aplicados à **tecnologia** e ao **cotidiano**  
+✅ Explorar **algoritmos clássicos** como:
+- 🔍 Busca em Profundidade (DFS)
+- 🌐 Busca em Largura (BFS)  
+
+✅ Modelar grafos em **Python** com código limpo, didático e bem comentado
+
+---
+
+## 💡 Para quem é essa trilha?
+
+Essa trilha é ideal tanto para **quem está começando** na área de tecnologia quanto para quem deseja **desenvolver pensamento lógico e estratégico**, com aplicações em:
+
+- 💻 Programação
+- 📊 Análise de dados
+- 🧠 Inteligência artificial
+- 🏗️ Engenharia de software
+- 🚀 E muito mais!
+
+---
+
+> *Pronto(a)?* Então, vamos juntos explorar como o mundo está **conectado** — e como podemos **modelar** e **resolver problemas** com a ajuda dos **grafos**! 🌐✨
+
